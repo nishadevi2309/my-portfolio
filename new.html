@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisha's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+    <header>
+        <h1>Hi there ,Welcome to My Portfolio! I'm Nishadevi</h1>
+        <p>"Designing dreams, crafting creativity, and turning ideas into art 🎨✨"</p>
+ 
+    </header>
+
+        <section class="profile">
+        <h2>About Me</h2>
+        <div class="profile-content">
+                        <p>Hi, I’m Nishadevi R 👋, a passionate creator with a flair for designing visually appealing and creative content ✨. My expertise lies in calendar templates , postcards , and festive card designs . I strive to add a personal touch to every creation 💖 while keeping it functional and aesthetically pleasing . Let’s explore my world of designs together! 🚀 </p>
+        </div>
+    </section>
+
+    <section class="slideshow-container">
+        <h2>Calendar template design</h2>
+        <div class="slideshow">
+            <div class="slide">
+                <img src="images/month calendar_page-0001.jpg" alt="January">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0002.jpg" alt="February">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0003.jpg" alt="March">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0004.jpg" alt="April">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0005.jpg" alt="May">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0006.jpg" alt="June">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0007.jpg" alt="July">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0008.jpg" alt="August">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0009.jpg" alt="September">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0010.jpg" alt="October">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0011.jpg" alt="November">
+            </div>
+            <div class="slide">
+                <img src="images/month calendar_page-0012.jpg" alt="December">
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="moveSlide(-1)">❮</a>
+        <a class="next" onclick="moveSlide(1)">❯</a>
+    </section>
+    
+    <section class="slideshow-container">
+        <h2>Vacation planner template</h2>
+        <div class="slideshow">
+            <div class="slide">
+                <img src="images1/vacation planner_page-0001.jpg" alt="January">
+            </div>
+            <div class="slide">
+                <img src="images1/vacation planner_page-0003.jpg" alt="February">
+            </div>
+            <div class="slide">
+                <img src="images1/vacation planner_page-0004.jpg" alt="March">
+            </div>
+                       
+        </div>
+
+
+    </section>
+
+    
+
+<section class="gallery">
+    <h2>My Designs</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="Beige Travel Thank You Postcard.png" alt="Design 1">
+            <p class="description">A warm beige travel thank-you postcard, perfect for expressing gratitude after an adventurous trip.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="Nishadevi Ravi.png" alt="Design 2">
+            <p class="description">A modern and professional name graphic, showcasing a minimalist and elegant design.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="christmas welcome card.jpg" alt="Design 3">
+            <p class="description">A festive Christmas welcome card to brighten up the holiday spirit with warm wishes.</p>
+        </div>
+        <div class="gallery-item">
+            <img src="christmas thankyou card.jpg" alt="Design 4">
+            <p class="description">A cheerful Christmas thank-you card, perfect for showing appreciation during the holiday season.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Thank you for visiting my portfolio I hope you enjoyed exploring my work</p>
+    <p>Created wit❤️ by Nisha</p>
+</footer>
+
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slide');
+            let totalSlides = slides.length;
+
+            // Adjust the slide position based on the slide index
+            let slideWidth = slides[0].clientWidth; // Width of each slide
+
+            // Calculate the position of the slides for horizontal movement
+            let slidePosition = -(slideIndex * slideWidth); // Slide movement based on the index
+
+            // Apply the position to the slideshow
+            let slideshow = document.querySelector('.slideshow');
+            slideshow.style.transition = 'transform 0.5s ease'; // Add smooth transition for the slides
+            slideshow.style.transform = `translateX(${slidePosition}px)`;
+        }
+
+        function moveSlide(n) {
+            let slides = document.querySelectorAll('.slide');
+            let totalSlides = slides.length;
+
+            // Update slideIndex based on the direction (left or right)
+            slideIndex += n;
+
+            // Prevent sliding beyond available slides
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1; // Go to the last slide
+            }
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0; // Loop back to the first slide
+            }
+
+            showSlides();
+        }
+
+        // Initialize slideshow
+        showSlides();
+    </script>
+
+</body>
+</html>

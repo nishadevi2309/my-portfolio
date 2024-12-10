@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisha's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio!</h1>
+        <p>Hi, I’m Nishadevi R, a Canva Creator applicant. Here’s a glimpse of my work!</p>
+    </header>
+    
+    <section class="gallery">
+        <h2>My Designs</h2>
+        <div class="gallery-grid">
+            <div><img src="C:\Users\nisha\Downloads\Nishadevi Ravi.png" alt="Design 1"></div>
+            <div><img src="C:\Users\nisha\Downloads\Beige Travel Thank You Postcard.png" alt="Design 2"></div>
+            <div><img src="design3.png" alt="Design 3"></div>
+        </div>
+    </section>
+
+    <section class="slideshow-container">
+        <h2>My Calendar Portfolio</h2>
+
+        <!-- Slideshow Images (3 at a time) -->
+        <div class="slideshow">
+            <div class="slide">
+                <img src="ilovepdf_pages-to-jpg/month_calendar_page-0001.jpg" alt="January">
+            </div>
+            <div class="slide">
+                <img src="ilovepdf_pages-to-jpg/month_calendar_page-0002.jpg" alt="February">
+            </div>
+            <div class="slide">
+                <img src="ilovepdf_pages-to-jpg/month_calendar_page-0003.jpg" alt="March">
+            </div>
+            <!-- Add more images for each month -->
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </section>
+
+    <footer>
+        <p>Created with ❤️ by Nisha</p>
+    </footer>
+<script>
+let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.querySelectorAll('.slide');
+    let totalSlides = slides.length;
+
+    // Calculate the position of the slides for horizontal movement
+    let slideWidth = slides[0].clientWidth; // Width of each slide
+    let slidesToShow = 3; // Number of slides to show at once
+    let offset = slideWidth * slidesToShow;
+
+    // Adjust the slide position based on the slide index
+    let slidePosition = -(slideIndex * offset);
+
+    // Apply the position to the slideshow
+    let slideshow = document.querySelector('.slideshow');
+    slideshow.style.transform = `translateX(${slidePosition}px)`;
+}
+
+function moveSlide(n) {
+    let slides = document.querySelectorAll('.slide');
+    let totalSlides = slides.length;
+
+    // Update slideIndex based on the direction (left or right)
+    slideIndex += n;
+
+    // Prevent sliding beyond available slides
+    if (slideIndex < 0) {
+        slideIndex = Math.floor(totalSlides / 3) - 1;
+    }
+    if (slideIndex >= Math.floor(totalSlides / 3)) {
+        slideIndex = 0;
+    }
+
+    showSlides();
+}
+
+// Initialize slideshow
+showSlides();
+</script>
+
+</body>
+</html>
